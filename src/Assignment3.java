@@ -46,11 +46,17 @@ public class Assignment3 {
 
         } while ( !validateGrade(grade2) );
 
+        // Check if the student has passed or failed and print accordingly
+        if ( checkIfPassed( grade1, grade2 ) ) {
 
-        //Print the name, and grades
-        System.out.println("Student: " + studentName);
-        System.out.println("Grade 1: " + grade1);
-        System.out.println("Grade 2: " + grade2);
+            System.out.println( studentName + " has passed.");
+
+        } else {
+
+            System.out.println( studentName + " has failed.");
+
+        }
+
     }
 
     /*
@@ -77,4 +83,28 @@ public class Assignment3 {
 
     }
 
+    /*
+     * Function Name: checkIfPassed
+     * Input:         grade1 - int - the first grade to check
+     *                grade2 - int - the second grade to check
+     * Output:        bool - true = both grades are at least 50
+     *                       false = at least one grade below 50
+     *
+     * Description:   This function checks to see if both grades are at least a 50.
+     *                If so it returns a true. If not it returns a false
+     *
+     */
+
+    private static boolean checkIfPassed( int grade1, int grade2 ) {
+
+        if ( grade1 < 50 ) {
+
+            return false;
+
+        } else {
+
+            return ( grade2 >= 50 );
+
+        }
+    }
 }
