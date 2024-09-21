@@ -30,13 +30,22 @@ public class Assignment3 {
         System.out.print("Enter student name: ");
         studentName = input.nextLine();
 
-        //Get the first grade from the user and store
-        System.out.print("Enter grade 1: ");
-        grade1 = input.nextInt();
+        //Get the first grade from the user, store it and repeat if invalid
+        do {
 
-        //Get the second grade from the user and store
-        System.out.print("Enter grade 2: ");
-        grade2 = input.nextInt();
+            System.out.print("Enter grade 1: ");
+            grade1 = input.nextInt();
+
+        } while ( !validateGrade(grade1) );
+
+        //Get the second grade from the user, store it and repeat if invalid
+        do {
+
+            System.out.print("Enter grade 2: ");
+            grade2 = input.nextInt();
+
+        } while ( !validateGrade(grade2) );
+
 
         //Print the name, and grades
         System.out.println("Student: " + studentName);
@@ -44,5 +53,28 @@ public class Assignment3 {
         System.out.println("Grade 2: " + grade2);
     }
 
+    /*
+     * Function Name: validateGrade
+     * Input:         grade - int - numeric grade to check
+     * Output:        bool - true  = the grade is valid (i.e. 0 to 100)
+     *                       false = the grade is invalid
+     *
+     * Description:   This function checks if the grade entered is between
+     *                0 and 100. If it is it will return true. If it is not
+     *                it will print "Grade is invalid" and return false.
+     *
+     */
+    private static boolean validateGrade(int grade) {
+
+        if (grade >=0 && grade <= 100) {
+
+            return true;
+
+        }
+
+        System.out.println("Grade is invalid");
+        return false;
+
+    }
 
 }
