@@ -14,10 +14,35 @@
  *
  */
 
+import java.util.Scanner; //The class needed to get data from the user
+
 public class Assignment3 {
 
     public static void main(String[] args) {
 
+        // Set up the local variables and input scanner
+        String studentName;
+        int grade1;
+        int grade2;
+        Scanner input = new Scanner(System.in);
+
+        //Get the student name from the user and store
+        System.out.print("Enter student name: ");
+        studentName = input.nextLine();
+
+        //Get the first grade from the user and store
+        System.out.print("Enter grade 1: ");
+        grade1 = input.nextInt();
+
+        //Get the second grade from the user and store
+        System.out.print("Enter grade 2: ");
+        grade2 = input.nextInt();
+
+        //Print the name, and grades
+        System.out.println("Student: " + studentName);
+        System.out.println("Grade 1: " + grade1);
+        System.out.println("Grade 2: " + grade2);
     }
+
 
 }
