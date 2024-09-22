@@ -97,14 +97,8 @@ public class Assignment3 {
 
     private static boolean checkIfPassed( int grade1, int grade2 ) {
 
-        if ( grade1 < 50 ) {
 
-            return false;
+        return ( grade2 >= 50 && grade1 >= 50 );
 
-        } else {
-
-            return ( grade2 >= 50 );
-
-        }
     }
 }
